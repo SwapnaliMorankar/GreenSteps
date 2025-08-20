@@ -1,0 +1,40 @@
+.champions-section {
+    max-width: 1000px;
+    background-color: #f1f8e9;
+    margin: 0 auto;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.champions-heading {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.champions-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.champion-card {
+    flex: 0 0 45%;
+    text-align: center;
+}
+
+.champion-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.champion-card h3 {
+    margin: 10px 0 5px;
+}
+
+.champion-card p {
+    font-size: 14px;
+}
