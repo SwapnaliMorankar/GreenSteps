@@ -1,0 +1,45 @@
+<template>
+    <lightning-card class="form-card">
+        <div class="main-content-wrapper">
+            <div class="header">
+                <h1>🌿 Register for Green Initiative</h1>
+                <p>Let’s contribute towards nature and grow greener together. 🌱</p>
+            </div>
+
+            <div class="image-section">
+                <img src={imageUrl} alt="Green Initiative Illustration" />
+            </div>
+
+            <template if:true={showThankYou}>
+                <section class="thank-you-overlay">
+                    <div class="thank-you-content">
+                        <button class="close-button" onclick={handleClose}>Go back</button>
+                        <h2>🎉 Congratulations, Changemaker!</h2>
+                        <p>You’ve successfully registered to this Initiative! 🌿</p>
+                    </div>
+                </section>
+            </template>
+
+            <template if:false={showThankYou}>
+                <div class="custom-form">
+                    <lightning-combobox
+                        label="Select an Initiative"
+                        options={initiativeOptions}
+                        value={selectedInitiative}
+                        onchange={handlePicklistChange}
+                        placeholder="-- Choose your initiative --">
+                    </lightning-combobox>
+
+                    <div class="slds-m-top_medium slds-align_absolute-center">
+                        <lightning-button
+                            variant="brand"
+                            label="Register"
+                            onclick={handleRegister}
+                            class="testbutton">
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

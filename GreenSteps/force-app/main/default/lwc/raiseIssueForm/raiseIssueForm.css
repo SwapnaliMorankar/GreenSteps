@@ -1,0 +1,159 @@
+.form-card {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* Removed background-color, padding, and box-shadow from here */
+    border-radius: 10px; /* Keep border-radius for the outer card */
+}
+
+.main-content-wrapper {
+    /* This new class now holds the background, padding, and shadow for the content area */
+    background-color: #e8f5e9; /* Light blue background for the content area */
+    padding: 1.5rem; /* Overall padding for the content inside the card */
+    box-shadow: 0 4px 12px #dcf8de; /* Light blue, subtle shadow */
+    border-radius: 10px; /* Apply border-radius here too, to match the shadow */
+    width: 90%;
+    margin: auto;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    color: rgb(212, 54, 99);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: 00;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: rgb(212, 54, 99);
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.5;
+}
+
+.success-popup {
+    background-color: #51e772;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-form .slds-form-element__label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+.custom-form .slds-input,
+.custom-form .slds-textarea,
+.custom-form .slds-select {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.custom-form .slds-input:focus,
+.custom-form .slds-textarea:focus,
+.custom-form .slds-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-section {
+    /* Adjusted padding to work with the new main-content-wrapper padding */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-section img {
+    max-width: 80%;
+    height: auto;
+    margin: auto;
+    margin-top: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #dcf8de;
+}
+
+.thank-you-overlay {
+    position: relative;
+    background-color: #e8f5e9; /* Light green background */
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+    margin: 2rem auto;
+    width: 90%;
+}
+
+.thank-you-content h2 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    font-family: 'Georgia', serif;
+    margin-bottom: 1rem;
+}
+
+.thank-you-content p {
+    font-size: 1.1rem;
+    color: #388e3c;
+    font-family: 'Georgia', serif;
+    margin-bottom: 2rem;
+}
+
+.close-button {
+    background-color: #66bb6a;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.close-button:hover {
+    background-color: #43a047;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .header p {
+        font-size: 0.95rem;
+    }
+    .main-content-wrapper { /* Adjust padding for mobile */
+        padding: 1rem;
+    }
+    .form-section {
+        padding-left: 10px; /* Further adjust for mobile */
+        padding-right: 10px;
+    }
+}

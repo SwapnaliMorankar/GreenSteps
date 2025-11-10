@@ -1,0 +1,27 @@
+<template>
+  <div class="grid-container">
+    <template for:each={initiatives} for:item="init">
+      <div key={init.Id} class="card">
+        <img src={init.Image_URL__c} alt={init.Name} class="initiative-image" />
+
+        <h2 class="initiative-name">{init.Name}</h2>
+        <p class="initiative-description">{init.Description__c}</p>
+
+        <div class="info-block">
+          <div><strong>Start Date:</strong> {init.Start_Date__c}</div>
+          <div><strong>End Date:</strong> {init.End_Date__c}</div>
+        </div>
+
+        <div class="info-block">
+          <div><strong>Status:</strong> {init.Status__c}</div>
+          <div><strong>Type:</strong> {init.Type_of_Initiative__c}</div>
+        </div>
+
+        <div class="info-block">
+          <div><strong>State:</strong> {init.State__c}</div>
+          <div><strong>City:</strong> {init.City__c}</div>
+        </div>
+      </div>
+    </template>
+  </div>
+</template>

@@ -1,0 +1,96 @@
+.heading {
+    display: flex;
+    justify-content: space-between; /* Pushes items to opposite ends */
+    align-items: center; /* Vertically centers both elements */
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #04844B;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+}
+
+.rating-section {
+    font-size: 28px;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.section-divider {
+    border: 0;
+    background-color: #d8d8d8; /* Light gray for separation */
+    margin-bottom: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+
+}
+
+.profile-display-mode p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.profile-display-mode strong {
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profile-display-mode lightning-icon {
+    margin-right: 0.25rem;
+}
+
+.profile-edit-mode .slds-grid {
+    margin-top: 1rem;
+}
+
+.profile-edit-mode lightning-input {
+    margin-bottom: 1rem;
+}
+
+/* Custom styling for card header and body */
+:host {
+    --sds-c-card-header-color-text: #04844B;
+    --sds-c-card-header-font-size: 1.5rem;
+}
+
+.edit-button {
+    --sds-c-button-brand-color-background: #04844B;
+    --sds-c-button-brand-color-background-hover: #036b3f;
+}
+
+/* New CSS for colored icons */
+.blue-icon {
+    --sds-c-icon-color-foreground-default: #0070d2; /* Salesforce Blue */
+}
+
+.purple-icon {
+    --sds-c-icon-color-foreground-default: #800080; /* Purple */
+}
+
+.red-icon {
+    --sds-c-icon-color-foreground-default: #c23934; /* Salesforce Red */
+}
+
+.gold-icon {
+    --sds-c-icon-color-foreground-default: #ffb75d; /* Gold */
+}
+
+.orange-icon {
+    --sds-c-icon-color-foreground-default: #e5601d; /* Salesforce Orange */
+}
+
+.green-icon {
+    --sds-c-icon-color-foreground-default: #04844B; /* GreenSteps' Green */
+}
+
+.light-blue-icon {
+    --sds-c-icon-color-foreground-default: #00b0da; /* Light Blue */
+}
+
+.pink-icon {
+    --sds-c-icon-color-foreground-default: #e3006a; /* Pink */
+}

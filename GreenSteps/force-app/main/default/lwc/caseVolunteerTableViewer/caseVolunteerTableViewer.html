@@ -1,0 +1,71 @@
+<template>
+    <lightning-card>
+        <div class="custom-heading slds-p-around_medium">
+            <h1 class="heading-text">💼 My Assigned Issues</h1>
+        </div>
+
+        <div class="table-wrapper">
+            <template if:true={cases}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th><div class="slds-truncate">Issue Number</div></th>
+                            <th><div class="slds-truncate">Subject</div></th>
+                            <th><div class="slds-truncate">Type</div></th>
+                            <th><div class="slds-truncate">Priority</div></th>
+                            <th><div class="slds-truncate">Status</div></th>
+                            <th><div class="slds-truncate">Created Date</div></th>
+                            <th><div class="slds-truncate">Actions</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={cases} for:item="caseRecord">
+                            <tr key={caseRecord.Id}>
+                                <td><div class="slds-truncate">{caseRecord.CaseNumber}</div></td>
+                                <td><div class="slds-truncate">{caseRecord.Subject}</div></td>
+                                <td><div class="slds-truncate">{caseRecord.Type}</div></td>
+                                <td><div class="slds-truncate">{caseRecord.Priority}</div></td>
+                                <td><div class="slds-truncate">{caseRecord.Status}</div></td>
+                                <td><div class="slds-truncate">{caseRecord.CreatedDate}</div></td>
+                                <td>
+                                    <lightning-button-icon icon-name="utility:preview" alternative-text="View"
+                                        onclick={handleView} data-id={caseRecord.Id} class="slds-m-right_x-small">
+                                    </lightning-button-icon>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+
+            <template if:true={isModalOpen}>
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <h2 class="slds-text-heading_medium">📓 Case Details</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium textbox">
+                            <p><strong>Case Number:</strong> {selectedCase.CaseNumber}</p>
+                            <p><strong>Subject:</strong> {selectedCase.Subject}</p>
+                            <p><strong>Description:</strong> {selectedCase.Description}</p>
+                            <p><strong>Type:</strong> {selectedCase.Type}</p>
+                            <p><strong>Priority:</strong> {selectedCase.Priority}</p>
+                            <p><strong>Status:</strong> {selectedCase.Status}</p>
+                            <p><strong>Created Date:</strong> {selectedCase.CreatedDate}</p>
+                            <p><strong>Close Date:</strong> {selectedCase.ClosedDate}</p>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <lightning-button variant="success" label="Close" onclick={closeModal}></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error slds-p-around_medium">⚠️ Error loading cases: {error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
+

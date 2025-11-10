@@ -1,0 +1,25 @@
+<!-- greenStepsUI.html -->
+<template>
+    <div class="main-container">
+
+        <!-- Main Content Section -->
+        <main class="main-content-area slds-grid slds-grid_vertical slds-grid_align-center slds-text-align_center">
+            <!-- Tagline -->
+            <p class="tagline">Discover green solutions for a bright future</p>
+
+            <!-- Main Heading -->
+            <h1 class="main-heading">Illuminating Tomorrow with <br/> Sustainable Energy</h1>
+
+            <!-- Action Buttons -->
+            <div class="button-group slds-grid slds-grid_align-center slds-p-top_large">
+                <!-- Added onclick handler -->
+                <button class="slds-button slds-button_brand join-revolution-button" onclick={handleJoinRevolution}>Join The Revolution</button>
+                <!-- Added onclick handler -->
+                <button class="slds-button slds-button_outline-brand watch-video-button" onclick={handleWatchVideo}>
+                    Watch Video
+                    <lightning-icon icon-name="utility:play" alternative-text="Play" size="x-small" class="slds-m-left_x-small"></lightning-icon>
+                </button>
+            </div>
+        </main>
+    </div>
+</template>

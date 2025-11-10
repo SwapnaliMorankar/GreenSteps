@@ -1,0 +1,26 @@
+<template>
+    <div class="join-card slds-box slds-theme_default">
+        <h2 class="card-heading">Be a Part of a Sustainable Community</h2>
+        <div class="profiles">
+            <div class="profile">
+                <img src={awareCitizenImage} alt="Aware Citizen" class="profile-img" />
+                <p class="profile-label">Join us as an Aware Citizen</p>
+                <p class="description2">As an Aware Citizen, you play a vital role in identifying 
+                    and reporting sustainability issues within your community. Your insights and 
+                    feedback on ongoing campaigns help us improve and tailor initiatives to better 
+                    serve local needs.</p>
+            </div>
+            <div class="profile">
+                <img src={activeVolunteerImage} alt="Active Volunteer" class="profile-img" />
+                <p class="profile-label">Join us as an Active Volunteer</p>
+                <p class="description2">You take direct action by participating in and 
+                    helping organize sustainability campaigns and events. Whether it's planting trees, leading 
+                    clean-up drives, or educating others, your hands-on involvement drives real change. 
+        </p>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="slds-button slds-button_brand" onclick={navigateToLogin}>Get Started</button>
+        </div>
+    </div>
+</template>

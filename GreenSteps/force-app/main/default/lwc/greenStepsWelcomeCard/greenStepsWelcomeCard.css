@@ -1,0 +1,56 @@
+.welcome-card {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    animation: slideFadeIn 3s ease-out;
+    width: 90%;
+    margin: auto;
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    box-shadow: 3px 3px 2px #e8f5e9;
+    border: 1px #e8f5e9;
+}
+
+.welcome-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00796b;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #004d40;
+}
+
+.description1 {
+    text-align: justify;
+    font-size: 1rem;
+    margin: 1rem 0;
+    color: #004d40;
+}
+
+.description {
+    font-size: 1rem;
+    margin: 1rem 0;
+    color: #004d40;
+}
+
+.call-to-action {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #004d40;
+}
+
+/* Animation */
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

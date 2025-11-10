@@ -1,0 +1,48 @@
+<template>
+    <lightning-card class="form-card">
+        <div class="slds-grid slds-wrap card-body main-content-wrapper">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_7-of-12 form-section">
+                <div class="header">
+                    <h1>Report an Environmental Issue</h1>
+                    <p>Your Voice Matters: Please fill the below form to report an issue.</p>
+                </div>
+
+                <template if:true={showSuccess}>
+                    <section class="thank-you-overlay">
+                        <div class="thank-you-content">
+                            <button class="close-button" onclick={handleClose}>Go back</button>
+                            <h2>🌍 Thank You for Taking Action!</h2>
+                            <p>Your report has been submitted successfully. Together, we make a difference! 🌱</p>
+                        </div>
+                    </section>
+                </template>                
+
+                <template if:false={showSuccess}>
+                    <lightning-record-edit-form
+                        object-api-name="Case"
+                        onsuccess={handleSuccess}
+                        onerror={handleError}
+                        class="custom-form">
+                        
+                        <lightning-input-field field-name="Subject"></lightning-input-field>
+                        <lightning-input-field field-name="Description"></lightning-input-field>
+                        <lightning-input-field field-name="Type"></lightning-input-field>
+
+                        <div class="slds-m-top_medium slds-align_absolute-center">
+                            <lightning-button
+                                variant="brand"
+                                type="submit"
+                                label="Submit"
+                                class="testbutton">
+                            </lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_5-of-12 image-section">
+                <img src={imageUrl} alt="No Image">
+            </div>
+        </div>
+    </lightning-card>
+</template>

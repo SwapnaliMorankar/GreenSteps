@@ -1,0 +1,36 @@
+<template>
+    <lightning-card>
+        <div class="custom-heading slds-p-around_medium">
+            <h1 class="heading-text">🌿 My Registered Initiatives</h1>
+        </div>
+
+        <div class="table-wrapper">
+            <template if:true={initiatives}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th><div class="slds-truncate">Initiative Name</div></th>
+                            <th><div class="slds-truncate">Status</div></th>
+                            <th><div class="slds-truncate">Start Date</div></th>
+                            <th><div class="slds-truncate">End Date</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={initiatives} for:item="initiative">
+                            <tr key={initiative.id}>
+                                <td><div class="slds-truncate">{initiative.initiativeName}</div></td>
+                                <td><div class="slds-truncate">{initiative.status}</div></td>
+                                <td><div class="slds-truncate">{initiative.startDate}</div></td>
+                                <td><div class="slds-truncate">{initiative.endDate}</div></td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error slds-p-around_medium">⚠️ Error loading initiatives: {error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

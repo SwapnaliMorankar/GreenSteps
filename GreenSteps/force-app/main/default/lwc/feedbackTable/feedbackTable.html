@@ -1,0 +1,67 @@
+<template>
+    <lightning-card>
+        <div class="custom-heading slds-p-around_medium">
+            <h1 class="heading-text">🌿 Feedback Overview</h1>
+        </div>
+
+        <div class="table-wrapper">
+            <template if:true={feedbacks}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th><div class="slds-truncate">Sr No</div></th>
+                            <th><div class="slds-truncate">Submitted By</div></th>
+                            <th><div class="slds-truncate">Green Initiative</div></th>
+                            <th><div class="slds-truncate">Average Satisfaction Score</div></th>
+                            <th><div class="slds-truncate">Actions</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={feedbacks} for:item="fb">
+                            <tr key={fb.Id}>
+                                <td><div class="slds-truncate">{fb.Name}</div></td>
+                                <td><div class="slds-truncate">{fb.Contact__r.Name}</div></td>
+                                <td><div class="slds-truncate">{fb.Green_Initiative__r.Name}</div></td>
+                                <td><div class="slds-truncate">{fb.Average_Feedback_Satisfaction_Score__c}</div></td>
+                                <td>
+                                    <lightning-button-icon icon-name="utility:preview" alternative-text="View"
+                                        onclick={handleView} data-id={fb.Id} class="slds-m-right_x-small">
+                                    </lightning-button-icon>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+
+            <template if:true={isModalOpen}>
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <h2 class="slds-text-heading_medium">📓 Feedback Details</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium textbox">
+                            <p><strong>Submitted By:</strong> {selectedfeedback.Contact__r.Name}</p>
+                            <p><strong>Green Initiative:</strong> {selectedfeedback.Green_Initiative__r.Name}</p>
+                            <p><strong>Informative?:</strong> {selectedfeedback.Was_the_campaign_informative__c}</p>
+                            <p><strong>Helpful Volunteers?:</strong> {selectedfeedback.Were_the_volunteers_helpful__c}</p>
+                            <p><strong>Eco-Friendly Actions?:</strong> {selectedfeedback.Did_it_encourage_eco_friendly_actions__c}</p>
+                            <p><strong>Clean Location?:</strong> {selectedfeedback.Was_the_location_clean_and_organized__c}</p>
+                            <p><strong>Overall Satisfaction?:</strong> {selectedfeedback.How_satisfied_are_you_overall__c}</p>
+                            <p><strong>Average Satisfaction Score:</strong> {selectedfeedback.Average_Feedback_Satisfaction_Score__c}</p>
+                            <p><strong>Suggestions:</strong> {selectedfeedback.Any_Suggestions__c}</p>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <lightning-button variant="success" label="Close" onclick={closeModal}></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error slds-p-around_medium">⚠️ Error loading feedback: {error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

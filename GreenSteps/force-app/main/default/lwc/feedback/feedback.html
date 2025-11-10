@@ -1,0 +1,49 @@
+<template>
+  <div class="page-layout">
+    <div class="content-wrapper">
+
+      <!-- Carousel Section -->
+      <div class="carousel-section">
+        <template for:each={carouselSlides} for:item="slide">
+          <template if:true={slide.active}>
+            <div key={slide.caption} class="carousel-slide">
+              <img src={slide.image} alt="Sustainability Tip" />
+              <p class="carousel-caption">{slide.caption}</p>
+            </div>
+          </template>
+        </template>
+      </div>
+
+      <!-- Feedback Form Section -->
+      <div class="form-section">
+        <div class="form-header">
+          <lightning-icon icon-name="standard:feedback" alternative-text="Feedback" size="small"></lightning-icon>
+          <span>We value your thoughts!</span>
+        </div>
+
+        <template if:true={showThankYou}>
+          <section class="thank-you-overlay">
+            <div class="thank-you-content">
+              <button class="close-button" onclick={handleClose}>Go back</button>
+              <h2>🙏 Thank You!</h2>
+              <p>Your feedback has been submitted successfully!</p>
+            </div>
+          </section>
+        </template>
+
+        <template if:false={showThankYou}>
+          <div class="custom-form">
+            <lightning-record-form
+              object-api-name="Feedback__c"
+              fields={fields}
+              mode="edit"
+              columns="2"
+              onsuccess={handleSuccess}
+              onerror={handleError}>
+            </lightning-record-form>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</template>

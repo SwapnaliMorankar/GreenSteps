@@ -1,0 +1,55 @@
+.custom-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.heading-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: rgb(212, 54, 99);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 5%;
+}
+
+.table-wrapper {
+    padding: 30px;
+    background-color: #f1f8e9; /* Light green background */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+    width: 90%;
+    margin: auto;
+}
+
+.slds-table th {
+    background-color: #c8e6c9;
+    color: #1b5e20;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.slds-table td {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.mainbox{
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+}
+
+.textbox{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+@media (max-width: 768px) {
+    .slds-table td, .slds-table th {
+        font-size: 0.85rem;
+    }
+}

@@ -1,0 +1,12 @@
+.custom-form-container {
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    background-color: #e8f5e9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+lightning-input-field {
+    margin-bottom: 1rem;
+    display: block;
+}

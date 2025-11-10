@@ -1,0 +1,244 @@
+.main-container {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-container {
+    width: 70%;
+    margin: auto;
+    margin-top: 60px;
+    padding: 1rem 3rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 4rem;
+    box-sizing: border-box;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #28a745;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    flex-grow: 1;
+}
+
+.nav-item {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-link {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.75rem;
+    display: block;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #28a745;
+    background-color: rgba(40, 167, 69, 0.08);
+}
+
+.header-actions {
+    gap: 1rem;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.search-button:hover,
+.search-button:focus {
+    color: #28a745;
+}
+
+.get-started-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.get-started-button:hover,
+.get-started-button:focus {
+    background-color: #218838;
+    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+}
+
+.main-content-area {
+    flex-grow: 1;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: -50px; /* Default negative margin */
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.main-heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #222;
+    line-height: 1.2;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.button-group {
+    gap: 1.2rem;
+}
+
+.join-revolution-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.join-revolution-button:hover,
+.join-revolution-button:focus {
+    background-color: #218838;
+    box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+}
+
+.watch-video-button {
+    background-color: transparent;
+    color: #28a745;
+    border: 2px solid #28a745;
+    padding: 0.8rem 1.8rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.watch-video-button:hover,
+.watch-video-button:focus {
+    background-color: #28a745;
+    color: white;
+}
+
+@media (max-width: 1200px) {
+    .main-content-area {
+        margin-top: -80px; /* Reduce negative margin for larger desktops/laptops when zoomed */
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-container {
+        width: 90%;
+        padding: 0.8rem 2rem;
+    }
+    .main-content-area {
+        padding: 30px;
+        max-width: 900px;
+        margin-top: -40px; /* Further reduce negative margin for tablets */
+    }
+    .main-heading {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+    }
+
+    .nav-item {
+        padding: 0.4rem 0;
+    }
+
+    .header-actions {
+        margin-top: 0.75rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main-content-area {
+        font-size: 2.5rem; /* This font-size on main-content-area is likely a typo, should be on main-heading */
+        padding: 20px;
+        margin-top: 0; /* Eliminate negative margin on smaller screens */
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .join-revolution-button,
+    .watch-video-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 0.75rem;
+    }
+
+    .header-container {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .main-heading {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+}

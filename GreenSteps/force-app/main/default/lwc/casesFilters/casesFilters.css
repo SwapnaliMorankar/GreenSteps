@@ -1,0 +1,10 @@
+.green-steps-container {
+    background-color: #E8F5E9; /* Light green background */
+    border: 1px solid #C8E6C9; /* Border with a slightly darker green */
+    padding: 1rem;
+    border-radius: 8px;
+}
+.green-steps-button {
+    background-color: #4CAF50; /* Primary green color */
+    color: white;
+}

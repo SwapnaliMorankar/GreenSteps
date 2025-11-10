@@ -1,0 +1,22 @@
+<template>
+    <lightning-card style="color: green;" title="New User Registration">
+        <div class="slds-m-around_medium custom-form-container">
+            <lightning-record-edit-form object-api-name="Contact" onsuccess={handleSuccess} onsubmit={handleSubmit}>
+                <lightning-messages></lightning-messages>
+
+                <lightning-input-field field-name="FirstName" required></lightning-input-field>
+                <lightning-input-field field-name="LastName" required></lightning-input-field>
+                <lightning-input-field field-name="User_Type__c" options={userTypeOptions}></lightning-input-field>
+                <lightning-input-field field-name="Email" type="email"></lightning-input-field>
+                <lightning-input-field field-name="Phone" type="tel"></lightning-input-field>
+                <lightning-input-field field-name="Birthdate" type="date"></lightning-input-field>
+                <lightning-input-field field-name="State__c" options={stateOptions}></lightning-input-field>
+                <lightning-input-field field-name="City__c" options={Options}></lightning-input-field>
+
+                <div class="slds-m-top_medium">
+                    <lightning-button variant="brand" type="submit" label="Register"></lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

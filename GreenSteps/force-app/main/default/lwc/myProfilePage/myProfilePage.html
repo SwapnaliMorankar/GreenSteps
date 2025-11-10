@@ -1,0 +1,169 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_large slds-text-color_default">
+            <template if:true={contact}>
+                <template if:false={isEditMode}>
+                    <div class="profile-display-mode">
+                        <div class="slds-m-bottom_small">
+                            <div class="heading">
+                                <h2 class="section-title">Personal Information</h2>
+                                <h1 class="rating-section">{contact.Rating__c}</h1>
+                            </div>
+                            <hr class="section-divider">
+                            <div class="slds-grid slds-wrap slds-gutters">
+                                <div class="slds-col slds-size_1-of-1 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:contact" size="x-small" alternative-text="User" class="blue-icon"></lightning-icon> 
+                                            Name:
+                                        </strong> {contact.FirstName} {contact.LastName}
+                                    </p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:account" size="x-small" alternative-text="Title" class="purple-icon"></lightning-icon> 
+                                            Title:
+                                        </strong> {contact.Title}
+                                    </p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:event" size="x-small" alternative-text="Date of Birth" class="red-icon"></lightning-icon> 
+                                            Date of Birth:
+                                        </strong> {contact.DateOfBirth__c}
+                                    </p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:thanks" size="x-small" alternative-text="Points" class="gold-icon"></lightning-icon> 
+                                            My Points 🏆:
+                                        </strong> {contact.My_Points__c}
+                                    </p>
+                                </div>
+        
+                            </div>
+                        </div>
+
+                        <div class="slds-m-bottom_small">
+                            <h2 class="section-title">Contact Information</h2>
+                            <hr class="section-divider">
+                            <div class="slds-grid slds-wrap slds-gutters">
+                                <div class="slds-col slds-size_1-of-2 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:email" size="x-small" alternative-text="Email" class="orange-icon"></lightning-icon> 
+                                            Email:
+                                        </strong> {contact.Email}
+                                    </p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:call" size="x-small" alternative-text="Phone" class="green-icon"></lightning-icon> 
+                                            Phone:
+                                        </strong> {contact.Phone}
+                                    </p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:address" size="x-small" alternative-text="Street" class="light-blue-icon"></lightning-icon> 
+                                            Street:
+                                        </strong> {contact.MailingStreet}
+                                    </p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:location" size="x-small" alternative-text="State" class="pink-icon"></lightning-icon> 
+                                            State:
+                                        </strong> {contact.State__c}
+                                    </p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:location" size="x-small" alternative-text="City" class="pink-icon"></lightning-icon> 
+                                            City:
+                                        </strong> {contact.City__c}
+                                    </p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-vertical_small">
+                                    <p>
+                                        <strong>
+                                            <lightning-icon icon-name="standard:address" size="x-small" alternative-text="Postal Code" class="light-blue-icon"></lightning-icon> 
+                                            Postal Code:
+                                        </strong> {contact.MailingPostalCode}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-text-align_right">
+                            <lightning-button variant="brand" label="Edit" onclick={toggleEdit} class="edit-button"></lightning-button>
+                        </div>
+                    </div>
+                </template>
+
+                <template if:true={isEditMode}>
+                    <div class="profile-edit-mode">
+                        <div class="slds-m-bottom_large">
+                            <h2 class="section-title">Edit Personal Information</h2>
+                            <hr class="section-divider">
+                            <div class="slds-grid slds-wrap slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input label="First Name" value={contact.FirstName} onchange={handleChange} data-id="FirstName"></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input label="Last Name" value={contact.LastName} onchange={handleChange} data-id="LastName"></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input label="Title" value={contact.Title} onchange={handleChange} data-id="Title"></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input label="Date of Birth" value={contact.BirthDate} onchange={handleChange} data-id="BirthDate" type="date"></lightning-input>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-m-bottom_large">
+                            <h2 class="section-title">Edit Contact Information</h2>
+                            <hr class="section-divider">
+                            <div class="slds-grid slds-wrap slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input label="Email" value={contact.Email} onchange={handleChange} data-id="Email"></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-input label="Phone" value={contact.Phone} onchange={handleChange} data-id="Phone"></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-1">
+                                    <lightning-input label="Street" value={contact.MailingStreet} onchange={handleChange} data-id="MailingStreet"></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-3">
+                                    <lightning-input label="State" value={contact.State__c} onchange={handleChange} data-id="State__c"></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-3">
+                                    <lightning-input label="City" value={contact.City__c} onchange={handleChange} data-id="City__c"></lightning-input>
+                                </div>
+                                <div class="slds-col slds-size_1-of-3">
+                                    <lightning-input label="Postal Code" value={contact.MailingPostalCode} onchange={handleChange} data-id="MailingPostalCode"></lightning-input>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="slds-text-align_right">
+                            <lightning-button variant="brand" label="Save" onclick={handleSave} class="slds-m-right_small"></lightning-button>
+                            <lightning-button variant="neutral" label="Cancel" onclick={toggleEdit}></lightning-button>
+                        </div>
+                    </div>
+                </template>
+            </template>
+            <template if:false={contact}>
+                <p>Loading contact details...</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
